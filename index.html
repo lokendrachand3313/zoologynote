@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokendra Chand · NEB +2 Zoology Notes</title>
+    <!-- Font Awesome 6 (free) for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f5f9;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #e9eef3;
+        }
+
+        /* header / title area */
+        .hero {
+            padding: 2.5rem 2.5rem 1rem 2.5rem;
+            background: linear-gradient(145deg, #ffffff 0%, #fafcff 100%);
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .badge {
+            display: inline-block;
+            background: #e6f0ff;
+            color: #1e4a6b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.35rem 1.2rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #cdddec;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0b2a41;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 i {
+            color: #2c6e9c;
+            font-size: 2.4rem;
+            margin-right: 8px;
+        }
+        .subhead {
+            font-size: 1.3rem;
+            color: #2c4559;
+            font-weight: 400;
+            margin-top: 0.25rem;
+            border-left: 5px solid #7aa7c9;
+            padding-left: 1.2rem;
+            background: #f0f7fe;
+            border-radius: 0 20px 20px 0;
+            width: fit-content;
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+        /* main content */
+        .main-content {
+            padding: 1.5rem 2.5rem 2rem 2.5rem;
+        }
+
+        .teacher-intro {
+            background: #f0f6fa;
+            padding: 1.8rem 2rem;
+            border-radius: 1.8rem;
+            margin: 1.5rem 0 2rem 0;
+            border: 1px solid #dae6f0;
+            box-shadow: inset 0 2px 4px #ffffff80, 0 6px 12px #e3eef9;
+        }
+        .teacher-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #1c3a4f;
+        }
+        .teacher-intro .highlight {
+            background: #d9eaf5;
+            font-weight: 600;
+            padding: 0.2rem 0.4rem;
+            border-radius: 8px;
+            color: #0b3b5a;
+        }
+        .signature-line {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0d4b6e;
+            margin-top: 1.5rem;
+            border-top: 2px solid #b9d3e8;
+            padding-top: 1rem;
+        }
+        .signature-line i {
+            color: #2a7faa;
+            margin-right: 6px;
+        }
+
+        .quote-block {
+            background: #eaf3fb;
+            border-radius: 1.5rem;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+            font-style: normal;
+            border-left: 8px solid #3a7ca5;
+            box-shadow: 0 6px 14px #d7e4f0;
+        }
+        .quote-block p {
+            font-size: 1.2rem;
+            font-weight: 450;
+            color: #003153;
+        }
+        .quote-block p i {
+            color: #4f7e9e;
+            margin: 0 6px;
+        }
+
+        /* today + share row */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 60px;
+            border: 1px solid #cbddee;
+            margin: 2.2rem 0 1.8rem 0;
+            box-shadow: 0 2px 6px #dce9f2;
+        }
+        .today {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .today i {
+            color: #1273b0;
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+        .today span {
+            background: #e4eff8;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            margin-left: 10px;
+            font-weight: 600;
+            color: #144e72;
+            border: 1px solid #b7d3ea;
+        }
+        .share {
+            font-size: 1.15rem;
+        }
+        .share a {
+            text-decoration: none;
+            color: #1e4f72;
+            background: #e3edf6;
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            margin-left: 0.8rem;
+            border: 1px solid #b3cee7;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+        .share a:hover {
+            background: #cbe0f0;
+            border-color: #6fa3cc;
+        }
+        .share i {
+            color: #0f5f93;
+            margin-right: 5px;
+        }
+
+        /* notes preview section – like "downloadable pdf" area */
+        .notes-section {
+            background: #f4f9ff;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1rem;
+            border: 2px solid #c7dfff;
+        }
+        .notes-section h2 {
+            font-size: 1.9rem;
+            font-weight: 650;
+            color: #123b57;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.8rem;
+        }
+        .notes-section h2 i {
+            font-size: 2rem;
+            color: #2a6b96;
+        }
+        .pdf-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.2rem;
+        }
+        .pdf-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.8rem 1.2rem 1.8rem;
+            box-shadow: 0 8px 18px #d0e0ee;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #b9d1e9;
+            flex: 1 1 200px;
+            transition: all 0.15s;
+        }
+        .pdf-card:hover {
+            background: #ecf5fd;
+            transform: translateY(-3px);
+            border-color: #7ea9cf;
+        }
+        .pdf-card i {
+            font-size: 2.6rem;
+            color: #c13030;
+        }
+        .pdf-info h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .pdf-info p {
+            color: #3a5c77;
+            font-size: 0.95rem;
+        }
+        .download-tag {
+            background: #116b45;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+
+        .footer-note {
+            background: #deecf5;
+            margin-top: 2.5rem;
+            padding: 1.2rem 2rem;
+            border-radius: 40px 40px 0 0;
+            font-size: 1rem;
+            color: #193e57;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer-note .best {
+            font-weight: 600;
+            background: #b9d6f0;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+        }
+
+        hr {
+            border: 1px solid #d6e5f1;
+            margin: 1.8rem 0 0.8rem 0;
+        }
+        .small-credit {
+            font-size: 0.95rem;
+            color: #2d577b;
+        }
+
+        /* from the image: # NEB +2 Zoology Note by Kokendra Chand – we show exactly */
+        .title-raw {
+            font-family: 'Courier New', monospace;
+            background: #eaf0f6;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px dashed #356f94;
+            color: #0d3f5c;
+        }
+        .title-raw i {
+            margin-right: 5px;
+            color: #a14f4f;
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .main-content { padding: 1rem 1.2rem; }
+            .info-row { flex-direction: column; gap: 0.7rem; align-items: start; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- exactly matches the given header: # NEB +2 Zoology Note by Kokendra Chand -->
+    <div class="hero">
+        <div class="title-raw">
+            <i class="fas fa-pencil-alt"></i> # NEB +2 Zoology Note by <strong>Kokendra Chand</strong>
+        </div>
+        <h1>
+            <i class="fas fa-dragon"></i> Welcome to My Website!
+        </h1>
+        <div class="subhead">
+            <i class="fas fa-feather-alt"></i> Lokendra Chand · M.Sc. Zoology (TU, 2023)
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- teacher introduction paragraph as provided -->
+        <div class="teacher-intro">
+            <p> 
+                <span class="highlight"><i class="fas fa-graduation-cap"></i> I am <strong>Lokendra Chand</strong></span>, a passionate zoologist with a Master's degree (M.Sc.) in Zoology from the <strong>Central Department of Zoology, Tribhuvan University, Kathmandu, Nepal</strong> (Graduated in 2023 A.D.).
+            </p>
+            <p>
+                After completing my studies, I began my journey as a <strong>+2 level Zoology teacher</strong>. During my teaching experience, I realized that there is a lack of organized and accessible web-based notes for students. To address this gap, I created this platform to provide <strong>concrete, reliable, and downloadable notes in PDF format</strong> to support your self-study.
+            </p>
+            <p>
+                If you're here looking for notes, you're in the right place—and if you're studying on your own, I truly admire your dedication. Independent learning is a great habit, and it shows your determination to succeed.
+            </p>
+            <div class="signature-line">
+                <i class="fas fa-quote-right"></i> [Best of luck in your academic journey!]
+            </div>
+        </div>
+
+        <!-- exactly the "Today" and "Share" row from image -->
+        <div class="info-row">
+            <div class="today">
+                <i class="far fa-calendar-alt"></i> Today 
+                <span>Feb 2026 – Feb 2027</span>
+            </div>
+            <div class="share">
+                <i class="fas fa-share-alt"></i> Share
+                <a href="#"><i class="fab fa-facebook-f"></i> FEE</a>
+                <a href="#"><i class="fab fa-twitter"></i> WED</a>
+            </div>
+        </div>
+
+        <!-- Concrete notes section – mimics the 'downloadable notes in PDF' idea -->
+        <div class="notes-section">
+            <h2>
+                <i class="fas fa-file-pdf"></i> NEB +2 Zoology Notes (Downloadable PDF)
+            </h2>
+            <div class="pdf-grid">
+                <div class="pdf-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="pdf-info">
+                        <h3>Animal Diversity <span class="download-tag">PDF</span></h3>
+                        <p>Unit 1–3 · 2.4 MB</p>
+                    </div>
+                </div>
+                <div class="pdf-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="pdf-info">
+                        <h3>Ecology & Behavior <span class="download-tag">PDF</span></h3>
+                        <p>Unit 4–6 · 1.8 MB</p>
+                    </div>
+                </div>
+                <div class="pdf-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="pdf-info">
+                        <h3>Chordates <span class="download-tag">PDF</span></h3>
+                        <p>Unit 7–9 · 3.1 MB</p>
+                    </div>
+                </div>
+                <div class="pdf-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="pdf-info">
+                        <h3>Genetics & Evol. <span class="download-tag">PDF</span></h3>
+                        <p>Unit 10–12 · 2.2 MB</p>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; color: #145a82;"><i class="fas fa-download"></i> Click any card to download (demo links – replace with actual PDFs). All notes prepared by Lokendra Chand.</p>
+        </div>
+
+        <!-- the 'Today' area already displayed, but we keep the block from the note: "Today Feb 2026 – Feb 2027" used above. 
+        also the share icons exactly: FEE_WED (we used FEE + WED) -->
+        
+        <!-- Additional little detail to match plain text from image: 
+        "Share FEE_WED" is done with FEE and WED buttons. 
+        also the dash "---" we reinterpret as horizontal rule -->
+        <hr>
+        <div style="display: flex; align-items: center; gap: 12px; color: #1f4d73; padding: 0.5rem 0;">
+            <i class="fas fa-minus" style="color: #8db3d0;"></i>
+            <span style="font-weight: 300; letter-spacing: 2px;">––––––––––––</span>
+            <span class="small-credit"><i class="far fa-copy"></i> reliable notes · NEB +2 zoology</span>
+        </div>
+
+        <!-- Final footer with best wishes and the date line again (just for style) -->
+        <div class="footer-note">
+            <span><i class="far fa-smile"></i> Self‑study hub by Lokendra Chand</span>
+            <span class="best"><i class="fas fa-seedling"></i> best of luck</span>
+        </div>
+        <!-- tiny note: includes the bracket message -->
+        <p style="text-align: right; margin-top: 0.8rem; opacity: 0.8; font-size: 0.95rem;">
+            <i class="fas fa-quote-left"></i> If you're studying on your own, I truly admire your dedication.
+        </p>
+    </div> <!-- end main-content -->
+    <!-- hidden consistency: the title also says "Kokendra Chand" but intro uses Lokendra – I keep both (as given) -->
+    <div style="background: #e7f0f9; text-align: center; padding: 0.8rem; font-size: 0.9rem; border-top: 2px solid #c7dbef;">
+        <i class="fas fa-map-pin"></i> Central Department of Zoology, TU · 2026 edition  |  # NEB +2 Zoology Note by <strong>Kokendra Chand</strong> (Lokendra)
+    </div>
+</div>
+<!-- container end -->
+</body>
+</html>

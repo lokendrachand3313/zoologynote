@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12 Zoology Notes · Lokendra Chand</title>
+    <!-- Font Awesome 6 & Google Fonts for modern typography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f0f9ff 0%, #e3f0fa 100%);
+            color: #0b2e45;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER (same attractive style) ===== */
+        .site-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px -8px rgba(0, 60, 100, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #1f6e9c, #0b4b73);
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 12px 18px -8px #1f6e9c60;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(140deg, #003459, #1b5e8a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .logo-text span {
+            background: #f4c28b;
+            color: #1d3f58;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            margin-left: 10px;
+            background: linear-gradient(145deg, #f7d9ad, #f5c994);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            color: #1c4b6e;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            background: rgba(25, 100, 150, 0.1);
+            color: #003459;
+        }
+
+        .nav-links a.active {
+            background: #003459;
+            color: white;
+            box-shadow: 0 6px 14px #00345940;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-container {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* page title */
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 80px;
+            box-shadow: 0 15px 25px -15px #1f5e8a;
+            border: 1px solid rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .page-title i {
+            font-size: 2.5rem;
+            color: #f09b4a;
+            background: #fff1dc;
+            padding: 0.8rem;
+            border-radius: 60%;
+        }
+
+        .page-title h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #003459, #216794);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* chapter grid */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 20px 30px -15px #366e96;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #c4e2fc40, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #f7c46b;
+            box-shadow: 0 30px 35px -12px #1b5a82;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            background: #e2f0ff;
+            width: 70px;
+            height: 70px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e5d86;
+            z-index: 2;
+            transition: 0.2s;
+        }
+
+        .chapter-card:hover .card-icon {
+            background: #f7c46b;
+            color: #1d3f58;
+        }
+
+        .card-content {
+            z-index: 2;
+            flex: 1;
+        }
+
+        .card-content h3 {
+            font-weight: 700;
+            font-size: 1.35rem;
+            margin-bottom: 0.25rem;
+            color: #003459;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #3f688b;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-content i {
+            color: #f09b4a;
+            font-size: 0.8rem;
+        }
+
+        /* disclaimer / note section */
+        .disclaimer-box {
+            background: #fffaec;
+            border-radius: 2.5rem;
+            padding: 2.2rem 2.8rem;
+            margin: 2.8rem 0 2rem;
+            border-left: 12px solid #f3b352;
+            box-shadow: 0 25px 30px -18px #99663350;
+            position: relative;
+        }
+
+        .disclaimer-box i.fa-quote-left {
+            font-size: 3rem;
+            color: #f3b352;
+            opacity: 0.4;
+            position: absolute;
+            top: 20px;
+            left: 25px;
+        }
+
+        .disclaimer-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a3f53;
+            line-height: 1.6;
+            padding-left: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .disclaimer-text strong {
+            color: #b64516;
+            font-weight: 700;
+        }
+
+        .teacher-signature {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            background: #ffffffb0;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            width: fit-content;
+            backdrop-filter: blur(4px);
+        }
+
+        .teacher-signature i {
+            color: #8b5e3c;
+        }
+
+        /* footer */
+        .footer-modern {
+            margin-top: 3rem;
+            background: #1f3d54;
+            border-radius: 3rem 3rem 0 0;
+            padding: 2.5rem 2rem 1.5rem;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-modern .copyright {
+            font-size: 1.2rem;
+            border-bottom: 2px solid #f3b352;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-modern i {
+            color: #f3b352;
+        }
+
+        .footer-links a {
+            color: #bdd9f0;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .page-title h1 { font-size: 2rem; }
+            .page-title i { font-size: 1.8rem; }
+            .chapter-grid { grid-template-columns: 1fr; }
+            .disclaimer-text { font-size: 1.1rem; }
+            .header-container { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- header with navigation (exactly as requested) -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-dna"></i></div>
+                <div class="logo-text">NEB +2 Zoology <span>Lokendra Chand</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#" class="active">Class 12 Note</a>
+                <a href="#">Class 11 Note</a>
+                <a href="#">Class 11 MCQ</a>
+                <a href="#">Class 12 MCQ</a>
+                <a href="#">SNEB Paper</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- page title -->
+        <div class="page-title">
+            <i class="fas fa-book-open"></i>
+            <h1>Class 12 Zoology Note</h1>
+        </div>
+
+        <!-- chapter grid - all 16 chapters from your list -->
+        <div class="chapter-grid">
+            <!-- 1. Animal Tissue -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-bone"></i></div>
+                <div class="card-content">
+                    <h3>Animal Tissue</h3>
+                    <p><i class="fas fa-star"></i> epithelial, connective, muscular</p>
+                </div>
+            </a>
+            <!-- 2. Frog Embryology -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-egg"></i></div>
+                <div class="card-content">
+                    <h3>Frog Embryology</h3>
+                    <p><i class="fas fa-star"></i> cleavage, gastrulation</p>
+                </div>
+            </a>
+            <!-- 3. Digestive System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                <div class="card-content">
+                    <h3>Digestive System</h3>
+                    <p><i class="fas fa-star"></i> human digestion</p>
+                </div>
+            </a>
+            <!-- 4. Respiratory System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-lungs"></i></div>
+                <div class="card-content">
+                    <h3>Respiratory System</h3>
+                    <p><i class="fas fa-star"></i> lungs, gas exchange</p>
+                </div>
+            </a>
+            <!-- 5. Circulatory System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                <div class="card-content">
+                    <h3>Circulatory System</h3>
+                    <p><i class="fas fa-star"></i> heart, blood vessels</p>
+                </div>
+            </a>
+            <!-- 6. Excretory System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-kidneys"></i></div>
+                <div class="card-content">
+                    <h3>Excretory System</h3>
+                    <p><i class="fas fa-star"></i> kidney, nephron</p>
+                </div>
+            </a>
+            <!-- 7. Nervous System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <div class="card-content">
+                    <h3>Nervous System</h3>
+                    <p><i class="fas fa-star"></i> neurons, CNS</p>
+                </div>
+            </a>
+            <!-- 8. Sense Organ -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <div class="card-content">
+                    <h3>Sense Organ</h3>
+                    <p><i class="fas fa-star"></i> eye, ear, skin</p>
+                </div>
+            </a>
+            <!-- 9. Endocrinology -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-hormone"></i></div>
+                <div class="card-content">
+                    <h3>Endocrinology</h3>
+                    <p><i class="fas fa-star"></i> glands, hormones</p>
+                </div>
+            </a>
+            <!-- 10. Reproductive System -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-venus-mars"></i></div>
+                <div class="card-content">
+                    <h3>Reproductive System</h3>
+                    <p><i class="fas fa-star"></i> male & female</p>
+                </div>
+            </a>
+            <!-- 11. Population Growth -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="card-content">
+                    <h3>Population Growth</h3>
+                    <p><i class="fas fa-star"></i> curves, factors</p>
+                </div>
+            </a>
+            <!-- 12. Health Disorder -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
+                <div class="card-content">
+                    <h3>Health Disorder</h3>
+                    <p><i class="fas fa-star"></i> common diseases</p>
+                </div>
+            </a>
+            <!-- 13. Substance Abuse -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-capsules"></i></div>
+                <div class="card-content">
+                    <h3>Substance Abuse</h3>
+                    <p><i class="fas fa-star"></i> drugs, addiction</p>
+                </div>
+            </a>
+            <!-- 14. Applied Biology -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-microscope"></i></div>
+                <div class="card-content">
+                    <h3>Applied Biology</h3>
+                    <p><i class="fas fa-star"></i> biotechnology</p>
+                </div>
+            </a>
+            <!-- 15. Poultry and Fish Farming -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-fish"></i></div>
+                <div class="card-content">
+                    <h3>Poultry & Fish Farming</h3>
+                    <p><i class="fas fa-star"></i> aquaculture</p>
+                </div>
+            </a>
+            <!-- 16. Human Diseases -->
+            <a href="#" class="chapter-card">
+                <div class="card-icon"><i class="fas fa-disease"></i></div>
+                <div class="card-content">
+                    <h3>Human Diseases</h3>
+                    <p><i class="fas fa-star"></i> bacterial, viral</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- IMPORTANT NOTE / DISCLAIMER exactly as you wrote -->
+        <div class="disclaimer-box">
+            <i class="fas fa-quote-left"></i>
+            <div class="disclaimer-text">
+                <strong>Note:</strong> "These notes don't include the entire syllabus, so read the textbook and the teacher's notes as well. don't care about chapter in my notes."
+            </div>
+            <div class="teacher-signature">
+                <i class="fas fa-feather-alt"></i> Copyright- Lokendra Chand, M.Sc.
+            </div>
+        </div>
+
+        <!-- extra decorative message -->
+        <div style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin: 1.5rem 0;">
+            <span style="background: #ffffffd0; padding: 0.5rem 1.8rem; border-radius: 60px;"><i class="fas fa-download" style="color:#1f8b4c;"></i> PDF available for each chapter</span>
+            <span style="background: #ffffffd0; padding: 0.5rem 1.8rem; border-radius: 60px;"><i class="fas fa-clock" style="color:#b6571a;"></i> Updated for NEB 2081</span>
+        </div>
+    </main>
+
+    <!-- footer with copyright -->
+    <footer class="footer-modern">
+        <div class="copyright">
+            <i class="far fa-copyright"></i> copyright Lokendra Chand
+        </div>
+        <p style="margin: 0.8rem 0; font-size: 1rem; opacity: 0.9;">
+            <i class="fas fa-map-pin"></i> Central Department of Zoology, TU · 2026
+        </p>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/lokendrachand3313" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">📖 For +2 NEB students · free study resources</p>
+    </footer>
+</body>
+</html>

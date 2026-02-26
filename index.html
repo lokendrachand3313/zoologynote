@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEB +2 Zoology Note by Lokendra Chand</title>
-    <!-- Font Awesome 6 (free) for icons -->
+    <title>NEB +2 Zoology · Lokendra Chand</title>
+    <!-- Font Awesome 6 (free) & Google Font for modern look -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,384 +17,493 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f4f9ff;
-            color: #0b2a3f;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f0f7ff 0%, #e6f0fa 100%);
+            color: #0b2e45;
+            line-height: 1.5;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
+        /* modern glassmorphism header */
+        .site-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px -8px rgba(0, 60, 100, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .header-container {
+            max-width: 1300px;
             margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #1f6e9c, #0b4b73);
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 12px 18px -8px #1f6e9c60;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: linear-gradient(140deg, #003459, #1b5e8a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .logo-text span {
+            background: #f4c28b;
+            color: #1d3f58;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            margin-left: 10px;
+            background: linear-gradient(145deg, #f7d9ad, #f5c994);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            color: #1c4b6e;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            background: rgba(25, 100, 150, 0.1);
+            color: #003459;
+        }
+
+        .nav-links a.highlight {
+            background: #003459;
+            color: white;
+            box-shadow: 0 6px 14px #00345940;
+        }
+
+        .nav-links a.highlight:hover {
+            background: #0b4b73;
+        }
+
+        /* main container */
+        .main-container {
+            max-width: 1300px;
+            margin: 2rem auto;
             padding: 0 2rem;
         }
 
-        /* ---------- HEADER ---------- */
-        .site-header {
+        /* hero card */
+        .hero-modern {
             background: white;
-            box-shadow: 0 6px 18px rgba(0, 40, 60, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            border-radius: 3rem;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 30px 50px -25px #1f4e7a;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.7);
             backdrop-filter: blur(4px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .header-inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 2rem 0.5rem 2rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .site-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #003459;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .site-title i {
-            color: #1f6e9c;
-            margin-right: 8px;
-        }
-
-        .nav-bar {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.2rem 2rem;
-            padding: 0.8rem 0 0.2rem;
-            border-top: 2px solid #e2f0f9;
-            margin-top: 0.3rem;
-        }
-
-        .nav-bar a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #144d6f;
-            padding: 0.4rem 0.2rem;
-            border-bottom: 3px solid transparent;
-            transition: 0.15s;
-        }
-
-        .nav-bar a:hover {
-            border-bottom-color: #2e7ca5;
-            color: #003153;
-        }
-
-        /* ---------- MAIN LAYOUT ---------- */
-        .main-content {
-            background: white;
-            border-radius: 3rem 3rem 0 0;
-            margin-top: 2rem;
-            padding: 2.5rem 2rem 3rem;
-            box-shadow: 0 10px 30px -12px #b3d3ec;
-        }
-
-        /* photo + intro flex */
-        .intro-row {
             display: flex;
             flex-wrap: wrap;
             gap: 2.5rem;
             align-items: center;
-            margin-bottom: 2rem;
-            background: #ecf6fe;
-            border-radius: 3rem;
-            padding: 2rem 2.5rem;
-            border: 1px solid #cbe2f5;
+            position: relative;
+            overflow: hidden;
         }
 
-        .photo-box {
-            flex: 0 0 180px;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 170px;
-            height: 170px;
+        .hero-modern::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #c3e2fc20, transparent 70%);
             border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 15px 25px -8px #2979a8;
-            background: #d2e6fa;
+            z-index: 0;
+        }
+
+        .photo-modern {
+            flex: 0 0 200px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #2f7ca5, #b5dffa);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            color: #1b5a7c;
+            box-shadow: 0 30px 35px -15px #18577e;
+            border: 5px solid white;
         }
 
-        .intro-text {
+        .profile-frame i {
+            font-size: 7rem;
+            color: white;
+            text-shadow: 2px 4px 8px #1b4d6e;
+        }
+
+        .hero-content {
             flex: 1;
+            z-index: 2;
         }
 
-        .intro-text h1 {
-            font-size: 2.6rem;
-            color: #0b3855;
-            margin-bottom: 0.6rem;
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #003057, #1c6a9b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             line-height: 1.2;
+            margin-bottom: 0.5rem;
         }
 
-        .intro-text h1 i {
-            color: #2879aa;
+        .hero-content h1 i {
+            background: none;
+            color: #f09b4a;
+            -webkit-text-fill-color: #f09b4a;
+            margin-right: 10px;
         }
 
-        .teacher-desc {
-            font-size: 1.15rem;
-            color: #193e56;
-            background: rgba(255,255,255,0.6);
-            padding: 0.8rem 1.5rem;
-            border-radius: 60px;
-            margin: 1rem 0;
+        .flair {
             display: inline-block;
-            border: 1px solid #b3d6f2;
+            background: #ddf0ff;
+            border-radius: 60px;
+            padding: 0.5rem 1.8rem;
+            font-weight: 600;
+            color: #02457a;
+            border: 1px solid #b7daf5;
+            margin: 0.5rem 0 1rem;
+            backdrop-filter: blur(4px);
+            font-size: 1.1rem;
         }
 
-        .intro-text p {
+        .hero-text p {
+            font-size: 1.1rem;
             margin-bottom: 1.2rem;
-            color: #1d4057;
+            color: #1a425b;
+            max-width: 750px;
         }
 
-        .facebook-link {
+        .hero-text strong {
+            color: #003459;
+            background: linear-gradient(145deg, #f9fcfd, #dff0fe);
+            padding: 0.1rem 0.4rem;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .fb-glow {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: #0866ff;
+            gap: 14px;
+            background: linear-gradient(95deg, #1877f2, #3b91fa);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.5rem;
             border-radius: 60px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.2rem;
-            margin: 1.2rem 0 0.5rem;
-            border: 1px solid #0a5bd6;
+            margin: 1.8rem 0 1rem;
+            box-shadow: 0 18px 30px -10px #1877f2;
             transition: 0.2s;
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
-        .facebook-link:hover {
-            background: #0052cc;
-            transform: scale(1.02);
-            box-shadow: 0 7px 14px #a4c9f0;
+        .fb-glow:hover {
+            background: linear-gradient(95deg, #0c63d4, #1877f2);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 28px 35px -12px #0f4fa3;
         }
 
-        .signature-quote {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #11527a;
-            margin-top: 1.5rem;
-            border-left: 7px solid #5da5d3;
-            padding-left: 1.5rem;
+        .fb-glow i {
+            font-size: 1.7rem;
         }
 
-        /* ----- PDF preview sections (generic reusable) ----- */
-        .section-title {
-            font-size: 2rem;
-            margin: 2.5rem 0 1.5rem;
-            color: #0d3b57;
-            border-bottom: 3px solid #cee7fe;
-            padding-bottom: 0.6rem;
+        .best-quote {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: #fbebc7;
+            display: inline-block;
+            padding: 0.4rem 2rem;
+            border-radius: 60px;
+            color: #1a4a2e;
+            margin-top: 0.5rem;
+            border-left: 7px solid #ffaa33;
+        }
+
+        /* resource hub */
+        .resource-hub {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 3rem;
+            padding: 2.5rem;
+            border: 1px solid white;
+            box-shadow: 0 20px 30px -15px #2e638b;
+        }
+
+        .hub-title {
+            font-size: 2.2rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            color: #003459;
+            margin-bottom: 2rem;
         }
 
-        .pdf-grid {
+        .hub-title i {
+            background: #f7b84d;
+            padding: 0.6rem;
+            border-radius: 20px;
+            color: #1f3d54;
+            font-size: 1.8rem;
+        }
+
+        .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
         }
 
-        .pdf-card {
-            background: #f1f9ff;
+        .study-card {
+            background: white;
             border-radius: 2rem;
-            padding: 1.3rem 1.2rem;
-            border: 2px solid #daecfd;
-            transition: all 0.2s;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: 0.2s;
+            border: 2px solid #ffffff;
+            box-shadow: 0 15px 25px -15px #407aa3;
             text-decoration: none;
-            color: inherit;
+            color: #1b3c52;
             display: block;
         }
 
-        .pdf-card:hover {
-            background: #e3f0fd;
-            border-color: #80b5e0;
-            transform: translateY(-5px);
-            box-shadow: 0 18px 25px -12px #8eb9dd;
+        .study-card:hover {
+            transform: translateY(-8px);
+            border-color: #f7c46b;
+            box-shadow: 0 30px 30px -15px #23577b;
         }
 
-        .pdf-icon {
-            font-size: 2.8rem;
-            color: #b22222;
-            margin-bottom: 0.7rem;
+        .card-icon {
+            font-size: 3rem;
+            background: #e2f0ff;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 30px;
+            margin: 0 auto 1.2rem;
+            color: #1e5d86;
         }
 
-        .pdf-card h3 {
-            font-size: 1.4rem;
+        .study-card h3 {
+            font-weight: 700;
+            font-size: 1.3rem;
             margin-bottom: 0.3rem;
-            color: #103f5c;
         }
 
-        .pdf-card p {
-            color: #2d5f83;
-            font-size: 0.95rem;
+        .study-card p {
+            font-size: 0.9rem;
+            color: #3f688b;
         }
 
-        .badge {
-            background: #1a724a;
-            color: white;
+        .popular-badge {
+            background: #f2bc5e;
+            color: #1f3d4e;
+            font-weight: 700;
             padding: 0.2rem 1rem;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             display: inline-block;
-            margin-top: 0.5rem;
         }
 
-        .footer {
-            background: #cde2f2;
+        .footer-modern {
+            margin-top: 3rem;
+            background: #1f3d54;
             border-radius: 3rem 3rem 0 0;
-            padding: 2rem 2rem 1.5rem;
+            padding: 2.5rem 2rem 1.5rem;
+            color: white;
             text-align: center;
-            font-size: 1.15rem;
-            color: #103e59;
-            margin-top: 2rem;
-            border-top: 3px solid white;
         }
 
-        .footer i {
-            color: #8b2c2c;
+        .footer-modern .copyright {
+            font-size: 1.2rem;
+            border-bottom: 2px solid #f3b352;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
         }
 
-        hr {
-            border: 1px solid #c7dff5;
-            margin: 1.5rem 0;
+        .footer-modern i {
+            color: #f3b352;
         }
-        @media (max-width: 700px) {
-            .intro-row { flex-direction: column; text-align: center; }
-            .site-title { font-size: 1.8rem; }
+
+        .footer-links a {
+            color: #bdd9f0;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 850px) {
+            .hero-modern { padding: 2rem 1.5rem; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .header-container { flex-direction: column; gap: 1rem; }
+        }
+        @media (max-width: 600px) {
+            .photo-modern { flex: 0 0 140px; }
+            .profile-frame { width: 140px; height: 140px; }
+            .profile-frame i { font-size: 5rem; }
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="header-inner">
-            <div class="site-title">
-                <i class="fas fa-graduation-cap"></i> NEB +2 Zoology Note by Lokendra Chand
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-dna"></i></div>
+                <div class="logo-text">NEB +2 Zoology <span>Lokendra Chand</span></div>
             </div>
-            <nav class="nav-bar">
+            <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">Class 12 Note</a>
                 <a href="#">Class 11 Note</a>
                 <a href="#">Class 11 MCQ</a>
                 <a href="#">Class 12 MCQ</a>
-                <a href="#">SNEB Question Paper</a>
-            </nav>
+                <a href="#" class="highlight">SNEB Paper</a>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="main-content">
-            <!-- INTRO SECTION with photo -->
-            <div class="intro-row">
-                <div class="photo-box">
-                    <div class="profile-img">
-                        <!-- font-awesome man icon as placeholder for photo -->
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <!-- optional caption -->
-                    <p style="margin-top: 0.5rem; font-weight: 500;">Lokendra Chand</p>
-                </div>
-                <div class="intro-text">
-                    <h1><i class="fas fa-pencil-alt"></i> Welcome to My Website!</h1>
-                    <span class="teacher-desc"><i class="fas fa-feather"></i> M.Sc. Zoology (TU, 2023) · +2 Educator</span>
-                    <p style="margin-top: 1.2rem;">
-                        <strong>I am Lokendra Chand</strong>, a passionate zoologist with a Master’s degree (M.Sc.) in Zoology from the <strong>Central Department of Zoology, Tribhuvan University, Kathmandu, Nepal</strong> (Graduated in 2023 A.D.).
-                    </p>
-                    <p>
-                        After completing my studies, I began my journey as a <strong>+2 level Zoology teacher</strong>. During my teaching experience, I realized that there is a lack of organized and accessible web-based notes for students. To address this gap, I created this platform to provide <strong>concise, reliable, and downloadable notes in PDF format</strong> to support your self-study.
-                    </p>
-                    <p>
-                        If you're here looking for notes, you're in the right place—and if you're studying on your own, I truly admire your dedication. Independent learning is a great habit, and it shows your determination to succeed.
-                    </p>
-                    <div class="signature-quote">
-                        Best of luck in your academic journey!
-                    </div>
-
-                    <!-- Facebook profile link (exact URL) -->
-                    <a href="https://www.facebook.com/lokendrachand3313" target="_blank" class="facebook-link">
-                        <i class="fab fa-facebook-f"></i> facebook.com/lokendrachand3313
-                    </a>
+    <main class="main-container">
+        <!-- HERO SECTION with photo & intro (attractive) -->
+        <div class="hero-modern">
+            <div class="photo-modern">
+                <div class="profile-frame">
+                    <i class="fas fa-user-graduate"></i> 
                 </div>
             </div>
-
-            <!-- Quick preview cards for notes (as examples of material) -->
-            <div class="section-title">
-                <i class="fas fa-download" style="color: #2074a0;"></i> Latest study materials
-            </div>
-
-            <div class="pdf-grid">
-                <!-- Class 12 note sample -->
-                <div class="pdf-card">
-                    <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3>Class 12: Chordates</h3>
-                    <p>Unit 3-5 · 28 pages · 3.2 MB</p>
-                    <span class="badge">PDF</span>
+            <div class="hero-content">
+                <h1><i class="fas fa-pencil-alt"></i> Welcome to my website!</h1>
+                <div class="flair"><i class="fas fa-feather"></i> M.Sc. Zoology (TU, 2023) · +2 educator</div>
+                <div class="hero-text">
+                    <p><strong>I am Lokendra Chand</strong>, a passionate zoologist with a Master’s degree (M.Sc.) in Zoology from the <strong>Central Department of Zoology, Tribhuvan University, Kathmandu, Nepal</strong> (Graduated in 2023 A.D.).</p>
+                    <p>After completing my studies, I began my journey as a <strong>+2 level Zoology teacher</strong>. I realized there’s a lack of organized web-based notes, so I created this platform to provide <strong>concise, reliable, downloadable PDF notes</strong> for your self‑study.</p>
+                    <p>If you're here for notes, you're in the right place — and if you're studying alone, I truly admire your dedication. Independent learning shows your determination to succeed.</p>
                 </div>
-                <!-- Class 11 note sample -->
-                <div class="pdf-card">
-                    <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3>Class 11: Non-chordates</h3>
-                    <p>Ecology, diversity · 22 pages</p>
-                    <span class="badge">PDF</span>
-                </div>
-                <!-- Class 12 MCQ -->
-                <div class="pdf-card">
-                    <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3>Class 12 MCQ collection</h3>
-                    <p>200+ questions with answers</p>
-                    <span class="badge">MCQ</span>
-                </div>
-                <!-- SNEB question paper -->
-                <div class="pdf-card">
-                    <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3>SNEB 2080 question paper</h3>
-                    <p>Zoology section · solved</p>
-                    <span class="badge">PDF</span>
+                <!-- Facebook profile link as a beautiful button -->
+                <a href="https://www.facebook.com/lokendrachand3313" target="_blank" class="fb-glow">
+                    <i class="fab fa-facebook-f"></i> /lokendrachand3313
+                </a>
+                <div class="best-quote">
+                    <i class="fas fa-star"></i> Best of luck in your academic journey!
                 </div>
             </div>
+        </div>
 
-            <!-- extra message: all pages exist with dummy content, but this index covers the home brief -->
-            <hr>
-            <p style="font-style: italic; text-align: center; color: #1b5d83;">
-                <i class="fas fa-book-open"></i> Each tab (Class 11 Note, Class 12 Note, MCQ, SNEB Paper) will lead to a page full of PDF resources. This homepage contains your full introduction and Facebook link.
-            </p>
+        <!-- Resource hub: attractive cards for each category -->
+        <div class="resource-hub">
+            <div class="hub-title">
+                <i class="fas fa-layer-group"></i> Study materials hub
+            </div>
+            <div class="card-grid">
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Class 11 Notes</h3>
+                    <p>8 units · 200+ pages</p>
+                    <span class="popular-badge">PDF</span>
+                </a>
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Class 12 Notes</h3>
+                    <p>Chordates, genetics, ecology</p>
+                    <span class="popular-badge">new</span>
+                </a>
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-question-circle"></i></div>
+                    <h3>Class 11 MCQ</h3>
+                    <p>300+ questions</p>
+                    <span class="popular-badge">practice</span>
+                </a>
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-question-circle"></i></div>
+                    <h3>Class 12 MCQ</h3>
+                    <p>500+ with answers</p>
+                    <span class="popular-badge">hot</span>
+                </a>
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-scroll"></i></div>
+                    <h3>SNEB Papers</h3>
+                    <p>2080, 2081 solved</p>
+                    <span class="popular-badge">PDF</span>
+                </a>
+                <a href="#" class="study-card">
+                    <div class="card-icon"><i class="fas fa-download"></i></div>
+                    <h3>All in one</h3>
+                    <p>notes + MCQs</p>
+                    <span class="popular-badge">bundle</span>
+                </a>
+            </div>
 
-            <!-- embedded sample grid for more categories (just visual) -->
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0;">
-                <span style="background: #ebf5ff; padding:0.6rem 1.8rem; border-radius:60px;"><i class="far fa-file-pdf"></i> Class 11 notes (6 units)</span>
-                <span style="background: #ebf5ff; padding:0.6rem 1.8rem; border-radius:60px;"><i class="far fa-file-pdf"></i> Class 12 notes (8 units)</span>
-                <span style="background: #ebf5ff; padding:0.6rem 1.8rem; border-radius:60px;"><i class="far fa-question-circle"></i> 500+ MCQs</span>
+            <!-- extra row of quick links with attractive styling -->
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0 0.5rem;">
+                <span style="background: #ffffffc0; padding:0.6rem 1.8rem; border-radius:60px; border:1px solid white;"><i class="fas fa-check-circle" style="color:#1f8b4c;"></i> Unitwise PDF</span>
+                <span style="background: #ffffffc0; padding:0.6rem 1.8rem; border-radius:60px; border:1px solid white;"><i class="fas fa-check-circle" style="color:#1f8b4c;"></i> Handwritten notes</span>
+                <span style="background: #ffffffc0; padding:0.6rem 1.8rem; border-radius:60px; border:1px solid white;"><i class="fas fa-check-circle" style="color:#1f8b4c;"></i> Solved grids</span>
             </div>
         </div>
     </main>
 
-    <!-- FOOTER with copyright -->
-    <footer class="footer">
-        <p><i class="far fa-copyright"></i> copyright Lokendra Chand <span style="margin:0 1rem;">|</span> all materials for NEB +2 zoology students</p>
-        <p style="margin-top: 1rem; font-size: 1rem;">
-            <i class="fas fa-envelope"></i> lokendra.zoology@example.com (example contact) <br>
-            <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/lokendrachand3313" style="color: #0e3f5e;" target="_blank">/lokendrachand3313</a>
+    <!-- attractive footer with copyright -->
+    <footer class="footer-modern">
+        <div class="copyright">
+            <i class="far fa-copyright"></i> copyright Lokendra Chand
+        </div>
+        <p style="margin: 0.8rem 0; font-size: 1rem; opacity: 0.9;">
+            <i class="fas fa-map-pin"></i> Central Department of Zoology, TU · 2026
         </p>
-        <p style="margin-top: 1.5rem;">📍 Central Department of Zoology, TU, Kathmandu</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">📚 All resources are free for NEB +2 students</p>
     </footer>
-
-    <!-- Dummy note: this is a single-page representation; navigation tabs currently link to same page but would be separate HTML in production. The design meets all requirements: header, nav items, photo placeholder, intro text, facebook link, footer. -->
 </body>
 </html>
